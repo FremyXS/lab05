@@ -100,27 +100,32 @@ namespace lab05
             int RaznAllX = 0;
             
             int RaznAllFuct = 0;
-            
+
             for (int i = 0; i < KolAllX; i++)
             {
-                TT = KolX[i];
+                TT = KolX[i].ToString().Length;
                 Console.Write("| ");
-                for (int n = 0; n < TT; n++)
+                Raznost(MaxChisloX, KolX, KolAllX, ref RaznAllX, TT);
+
+                for (int n = 0; n < RaznAllX; n++)
                 {
-                    Raznost(MaxChisloX, KolX, KolAllX, ref RaznAllX, TT);
                     Console.Write(" ");
                 }
+                
+               
                 Console.Write(KolX[i]);
                 
 
-                TT = KolFuct[i];
+                TT = KolFuct[i].ToString().Length;
                 Console.Write(" | ");
-                for (int n = 0; n < TT; n++)
-                {
-                    Raznost(MaxChisloFuct, KolFuct, KolAllFuct, ref RaznAllFuct, TT);
-                    Console.Write(" ");
 
+                Raznost(MaxChisloFuct, KolFuct, KolAllFuct, ref RaznAllFuct, TT);
+
+                for (int n = 0; n < RaznAllFuct; n++)
+                {
+                    Console.Write(" ");
                 }
+                
                 Console.Write(KolFuct[i]);
                 
                 Console.WriteLine(" |");
