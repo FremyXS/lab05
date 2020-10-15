@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Xml.Schema;
 
 namespace lab05
 {
@@ -31,7 +33,24 @@ namespace lab05
             int MaxChisloFuct = 0;
             MaxFuct(KolFuct, ref KolAllFuct, ref MaxChisloFuct);
 
-            Tablet(KolX, KolFuct, KolAllX, KolAllFuct, MaxChisloX, MaxChisloFuct);
+            
+
+            int i = 0;
+            while (i < 2)
+            {
+                
+                
+
+                Console.Clear();
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.BackgroundColor = ConsoleColor.White;
+
+                Thread.Sleep(1000);
+                Tablet(KolX, KolFuct, KolAllX, KolAllFuct, MaxChisloX, MaxChisloFuct);
+                Console.WriteLine(" ");
+                Thread.Sleep(1000);
+            }
 
         }
 
@@ -84,15 +103,12 @@ namespace lab05
                     }
                 }
             }
-            
         }
 
         public static void Raznost(int MaxChislo, List<int> Kol, int KolAll, ref int RaznAll, int TT)
         {
             RaznAll = 0;
             RaznAll = MaxChislo - TT;
-
-
         }
         public static void Tablet (List<int> KolX, List <int> KolFuct, int KolAllX, int KolAllFuct, int MaxChisloX, int MaxChisloFuct)
         {
@@ -111,10 +127,8 @@ namespace lab05
                 {
                     Console.Write(" ");
                 }
-                
-               
+           
                 Console.Write(KolX[i]);
-                
 
                 TT = KolFuct[i].ToString().Length;
                 Console.Write(" | ");
@@ -130,8 +144,6 @@ namespace lab05
                 
                 Console.WriteLine(" |");
             }
-
         }
-
     }
 }
